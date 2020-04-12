@@ -1,0 +1,382 @@
+<html>
+<head>
+<title>Zoisite's Wardrobe Game. Dress him up! ^_^ </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>
+
+<style type="text/css" media="all">
+body {
+	background-color: #84671D;
+	background-image: url(fon.gif);
+}
+body,td,th {
+	color: #F2ECD9;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+a:link {
+	color: #371607;
+	text-decoration: none;
+}
+a:visited {
+	color: #371607;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a:active {
+	color: #371607;
+	text-decoration: none;
+}
+a {
+	font-weight: bold;
+}
+-->
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Image Thumbnail Viewer II script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+//Specify image paths and optional link (set link to "" for no link):
+var dynimages=new Array()
+
+dynimages[1]=["00000.png", ""]
+dynimages[2]=["neod-pont.png", ""]
+dynimages[3]=["zagar.png", ""]
+dynimages[4]=["vacations.png", ""]
+dynimages[5]=["glooves.png", ""]
+dynimages[6]=["00000.png", ""]
+dynimages[7]=["00000.png", ""]
+dynimages[8]=["ushanka.png", ""]
+dynimages[9]=["krista.png", ""]
+dynimages[10]=["slan.png", ""]
+dynimages[11]=["naushi.png", ""]
+dynimages[12]=["cowkn.png", ""]
+dynimages[13]=["neod.png", ""]
+dynimages[14]=["00000.png", ""]
+dynimages[15]=["x.gif", ""]
+dynimages[16]=["lum.png", ""]
+dynimages[17]=["cowrub.png", ""]
+dynimages[18]=["dj-dj.png", ""]
+dynimages[19]=["maika.png", ""]
+dynimages[20]=["laer1.png", ""]
+dynimages[21]=["noski.png", ""]
+dynimages[22]=["olympic.png", ""]
+dynimages[23]=["00000.png", ""]
+dynimages[24]=["dj-scarf.png", ""]
+dynimages[25]=["nehogarm.png", ""]
+dynimages[26]=["neho3.png", ""]
+dynimages[27]=["neho1.png", ""]
+dynimages[28]=["mila2.png", ""]
+dynimages[29]=["fata.png", ""]
+dynimages[30]=["ampir.png", ""]
+dynimages[31]=["mila1.png", ""]
+dynimages[32]=["nh-neko.png", ""]
+dynimages[33]=["dj-sht.png", ""]
+dynimages[34]=["uniform.png", ""]
+dynimages[35]=["shorts.png", ""]
+dynimages[36]=["nonhuman.png", ""]
+dynimages[37]=["sm.png", ""]
+dynimages[38]=["cowtr.png", ""]
+dynimages[39]=["nehovanenk.png", ""]
+dynimages[40]=["00000.png", ""]
+dynimages[41]=["del.png", ""]
+dynimages[42]=["neho2.png", ""]
+dynimages[43]=["laer2.png", ""]
+dynimages[44]=["00000.png", ""]
+
+
+
+
+//Preload images ("yes" or "no"):
+var preloadimg="no"
+
+//Set optional link target to be added to all images with a link:
+var optlinktarget=""
+
+//Set image border width
+var imgborderwidth=0
+
+//Optionally, change 1.0 and 0.7 below to affect Wipe gradient size and duration in seconds in IE5.5+:
+var filterstring="progid:DXImageTransform.Microsoft.GradientWipe(GradientSize=0.0 Duration=0.0)"
+
+
+///////No need to edit beyond here/////
+
+if (preloadimg=="yes"){
+for (x=0; x<dynimages.length; x++){
+var myimage=new Image()
+myimage.src=dynimages[x][0]
+}
+}
+
+function returnimgcode(theimg){
+var imghtml=""
+if (theimg[1]!="")
+imghtml='<a href="'+theimg[1]+'" target="'+optlinktarget+'">'
+if( window.navigator.appName =='Netscape'|| window.navigator.appName =='Opera')
+imghtml+='<img src="'+theimg[0]+'" border="'+imgborderwidth+'">'
+if (window.navigator.appName !='Netscape')
+if (window.navigator.appName !='Opera')
+imghtml+='<div style=height:250px;width:250px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='+theimg[0]+');></div>'
+if (theimg[1]!="") imghtml+='</a>'
+return imghtml
+}
+
+function modifyimage(loadarea, imgindex){
+if (document.getElementById){
+var imgobj=document.getElementById(loadarea)
+if (imgobj.filters && window.createPopup){
+imgobj.style.filter=filterstring
+imgobj.filters[0].Apply()
+}
+imgobj.innerHTML=returnimgcode(dynimages[imgindex])
+if (imgobj.filters && window.createPopup)
+imgobj.filters[0].Play()
+return false
+}
+}
+
+</script>
+
+
+
+<style>
+<!--
+.dragme{position:relative;}
+-->
+</style>
+<script language="JavaScript1.2">
+<!--
+
+var ie=document.all;
+var nn6=document.getElementById&&!document.all;
+
+var isdrag=false;
+var x,y;
+var dobj;
+
+function movemouse(e)
+{
+  if (isdrag)
+  {
+    dobj.style.left = nn6 ? tx + e.clientX - x : tx + event.clientX - x;
+    dobj.style.top  = nn6 ? ty + e.clientY - y : ty + event.clientY - y;
+    return false;
+  }
+}
+
+function selectmouse(e) 
+{
+  var fobj       = nn6 ? e.target : event.srcElement;
+  var topelement = nn6 ? "HTML" : "BODY";
+
+  while (fobj.tagName != topelement && fobj.className != "dragme")
+  {
+    fobj = nn6 ? fobj.parentNode : fobj.parentElement;
+  }
+
+  if (fobj.className=="dragme")
+  {
+    isdrag = true;
+    dobj = fobj;
+    tx = parseInt(dobj.style.left+0);
+    ty = parseInt(dobj.style.top+0);
+    x = nn6 ? e.clientX : event.clientX;
+    y = nn6 ? e.clientY : event.clientY;
+    document.onmousemove=movemouse;
+    return false;
+  }
+}
+
+document.onmousedown=selectmouse;
+document.onmouseup=new Function("isdrag=false");
+
+//-->
+</script>
+</head>
+
+<body>
+<img src="zoi.jpg" width="308" height="621" STYLE="position:absolute; top:33px; left:20px ">
+
+
+
+<div id="kozha"   style="position:absolute;z-index:1; top:33px; left:62px;"></div>
+
+<div id="zapas"   style="position:absolute;z-index:1; top:33px; left:62px;"></div>
+
+<div id="polka1"     style="position:absolute;z-index:1; top:33px; left:62px;"></div>
+
+<div id="vse"        style="position:absolute;z-index:1; top:33px; left:62px;"></div>
+
+<div id="lay6"     style="position:absolute;z-index:1; top:33px; left:62px;"></div>
+
+<div id="polka2"     style="position:absolute;z-index:1; top:33px; left:62px;"></div>
+
+
+
+
+
+
+
+
+<div style="position:absolute;z-index:1; top:46px; left:376px;px;height:428px">
+<b>Layer 1:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  Layer 2: </b>
+
+<br>
+<nobr>
+<a href="#" onClick="return modifyimage('kozha', 15)"><img src="xs.gif" alt="снять одежку" hspace="8" vspace="27" border="0"></a>
+<a href="#" onClick="return modifyimage('kozha', 2)"><img src="neod-pont.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('kozha', 5)"><img src="glooves.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('kozha', 3)"><img src="zagar.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('kozha', 4)"><img src="vacations.gif" border="0"></a>
+&nbsp; &nbsp;<a href="#" onClick="return modifyimage('zapas', 15)"><img src="xs.gif" alt="снять одежку" hspace="10" vspace="27" border="0"></a>
+<a href="#" onClick="return modifyimage('zapas', 8)"><img src="ushanka.gif" border="0"></a>
+
+<a href="#" onClick="return modifyimage('zapas', 10)"><img src="slan.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('zapas', 11)"><img src="naushi.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('zapas', 12)"><img src="cowkn.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('zapas', 13)"><img src="neod.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('zapas', 14)"></a></nobr>
+
+<p>
+
+<b>Layer 3: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;  Layer 4: </b>
+<br>
+<nobr>
+<a href="#" onClick="return modifyimage('polka1', 15)"><img src="xs.gif" alt="снять одежку" hspace="8" vspace="27" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 16)"><img src="lums.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 17)"><img src="cowrubs.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 18)"><img src="dj-dj.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 19)"><img src="maikas.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 20)"><img src="laer1.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 21)"><img src="noski.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka1', 22)"><img src="olympic.gif" border="0"></a>
+&nbsp; &nbsp;
+<a href="#" onClick="return modifyimage('polka2', 15)"><img src="xs.gif" alt="снять одежку" hspace="8" vspace="27" border="0"></a>
+<a href="#" onClick="return modifyimage('polka2', 24)"><img src="dj-scarf.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('polka2', 29)"><img src="fata.gif" border="0"></a>
+
+
+
+</nobr>
+<p>
+
+<b>Layer 5: </b><br>
+<nobr>
+<a href="#" onClick="return modifyimage('vse', 15)"><img src="xs.gif" alt="снять одежку" hspace="8" vspace="27" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 31)"><img src="mila1s.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 33)"><img src="dj-sht.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 34)"><img src="uniforms.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 35)"><img src="shorts.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 36)"><img src="nonhuman.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 37)"><img src="sm.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 38)"><img src="cowtr.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 39)"><img src="nehovanenk.gif" border="0"></a>
+
+<a href="#" onClick="return modifyimage('vse', 40)"></a>
+<a href="#" onClick="return modifyimage('vse', 41)"><img src="del.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 9)"><img src="krista.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('vse', 42)"></a>
+<a href="#" onClick="return modifyimage('vse', 43)"></a>
+<a href="#" onClick="return modifyimage('vse', 44)"></a>
+</nobr>
+
+<p>
+<b>Layer 6: </b><br>
+<nobr>
+<a href="#" onClick="return modifyimage('lay6', 15)"><img src="xs.gif" alt="снять одежку" hspace="8" vspace="27" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 28)"><img src="mila2.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 32)"><img src="nh-nekos.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 30)"><img src="ampir.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 25)"><img src="nehogarm.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 26)"><img src="neho3.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 27)"><img src="neho1.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 42)"><img src="neho2.gif" border="0"></a>
+<a href="#" onClick="return modifyimage('lay6', 43)"><img src="laer2.gif" border="0"></a>
+
+<a href="#" onClick="return modifyimage('lay6', 44)"></a></nobr></div>
+
+
+<div style="position:absolute; z-index:4; top:487px; left:379px; px;height:85px; width: 519px;">
+
+<b>Extras:</b><br>
+
+
+<!-- SM-odango -->
+<span class="dragme" style="display:inline-block;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='odango.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="odango.png" width="64" height="46" border="0"></span>
+
+<!-- mask -->
+<span class="dragme" style="display:inline-block;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='mask.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="mask.png" width="62" height="29" border="0"></span>
+<!-- rose -->
+<span class="dragme" style="display:inline-block;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='rose.png');">
+<img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="rose.png" width="47" height="29" border="0"></span>
+
+<!-- ushi -->
+<span class="dragme" style="display:inline-block; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='ushi.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="ushi.png" width="71" height="46" border="0"></span>
+<br>
+<!-- lum-nar -->
+<span class="dragme" style="display:inline-block; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='lum-nar.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="lum-nar.png" width="28" height="69" border="0"></span>
+
+<!-- heheh -->
+<span class="dragme" style="display:inline-block; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='string.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="string.png" width="71" height="51" border="0"></span>
+
+<!-- hat-->
+<span class="dragme" style="display:inline-block; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='hat.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="hat.png" width="52" height="73" border="0"></span>
+
+<!-- veer -->
+<span class="dragme" style="display:inline-block; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=veer.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="veer.png" width="78" height="82" border="0"></span>
+
+<!-- cilindr -->
+<span class="dragme" style="display:inline-block; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=cilindr.png');"><img style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);"
+src="cilindr.png" width="67" height="66" border="0"></span>
+
+</div>
+
+
+
+
+
+
+<div  style="position:absolute; top:675px; left:64px; width: 486px;">
+Желающие нарисовать одежку для Зоя могут скачать куклу 200% величины  <a href="http://www.zoisite.darkkingdom.ru/doll/zoidoll.jpg" target="_blank">здесь</a> (85кб) <br>
+Для добавления одежки к коллекции отправьте прозрачный файл png-24 или psd  <a href="mailto:bleak_one@mail.ru">сюда</a><br>
+&copy; 2007 Tata <a href="http://www.zoisite.darkkingdom.ru">zoisite.darkkingdom.ru</a>
+<br>Scripts by <a href="http://elouai.com/">eLouai</a> and <a href="http://www.dynamicdrive.com">Dynamic Drive</a>.<br></div>
+
+
+ <!--Rating@Mail.ru COUNTER--><script language="JavaScript"><!--
+d=document;a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3"><!--
+js=13//--></script><script language="JavaScript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=226095"'+
+' target=_top><img src="http://top.list.ru/counter'+
+'?id=226095;t=47;js='+js+a+';rand='+Math.random()+
+'" alt=""'+' border=0 height=1 width=1></a>')
+if(js>11)d.write('<'+'!-- ')//--></script><noscript>
+
+
+</body>
+</html>

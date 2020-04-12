@@ -1,0 +1,20 @@
+{
+  "name": "my-awesome-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "iconv-lite": "^0.5.1",
+    "jquery": "^3.4.1",
+    "jsdom": "^16.2.0",
+    "livereload": "^0.9.1",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "Ridgerr",
+  "license": "ISC"
+}

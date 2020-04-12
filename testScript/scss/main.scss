@@ -1,0 +1,323 @@
+//css theme
+$main-background: Black;
+$secondary-background: #C0C0C0;
+$border-color: #808080;
+$secondary-color: #CEB7DD;
+
+$list-text: Black;
+$other-text: White;
+$link-secondary: #505050;
+$link-title: #000;
+$link-black-hover: #808080;
+$link-white-hover: #CEB7DD;
+
+$text-size-fic: 18px;
+$text-size-body: 14px;
+
+
+body {
+    background: $main-background;
+    color: White;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: $text-size-body;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 28px;
+    background: url(../img/line1.jpg) no-repeat center bottom;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+a {
+    color: White;
+
+    &:hover {
+        text-decoration: underline;
+        color: $link-white-hover;
+    }
+}
+
+.description {
+    text-align: center;
+
+    span {
+        color: $secondary-color;
+        font-weight: bold;
+    }
+}
+
+.additional-links {
+    strong, a {
+        display: block;
+    }
+}
+
+main {
+    padding: 5px;
+
+    @media screen and (min-width: 768px) {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.main__container {
+    display: flex;
+    flex-flow: column;
+    margin-top: 20px;
+
+    @media screen and (min-width: 992px) {
+        flex-flow: row;
+        justify-content: space-between;
+    }
+}
+
+.fanfiction {
+    &-per-page {
+        margin-top: 20px;
+
+        &__select {
+            border: 1px solid $border-color;
+            font-size: 16px;
+            padding: 5px;
+        }
+    }
+
+    &-list {
+        &__wrapper {
+            @media screen and (min-width: 992px) {
+                flex-basis: 75%;
+            }    
+        }
+    }
+
+    &-item {
+        background: $secondary-background;
+        color: Black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: $text-size-fic;
+        border: 1px solid $border-color;
+        padding: 10px;
+        margin-bottom: 20px;
+
+        &.award {
+            position: relative;
+            margin-top: 40px;
+            border-color: $link-white-hover;
+
+            &:before {
+                content: "";
+                width: 26px;
+                height: 22px;
+                background: url(../img/diamond.gif) no-repeat 0 0;
+                position: absolute;
+                top: -27px;
+                left: 0;
+            }
+
+            &--rainbow {
+                &:before {
+                    background-image: url(../img/rainbow.gif);
+                }
+            }
+        }
+
+        a {
+            color: Black;
+
+            &:hover {
+                color: $link-black-hover;
+            }
+        }
+
+        &__title {
+            a {
+                font-size: $text-size-fic + 2;
+                color: $link-title;
+
+                &.award {
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 5px;
+                        border: 1px solid Black;
+                        background: Red;
+                    }
+                }
+            }
+        }
+
+        &__title,
+        &__author {
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+
+        &__author {
+            a {
+                color: $link-secondary;
+            }
+        }
+
+        &__parts {
+            display: inline-block;
+            font-weight: normal;
+
+            a {
+                font-weight: normal;
+                color: Black;
+                font-size: $text-size-fic;
+                padding: 0 3px 0 7px;
+            }
+        }
+    }
+
+    &-pagination {
+        margin: 0 auto;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+
+            &.current {
+                text-decoration: none;
+                cursor: default;
+                color: $secondary-color;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &-filters {        
+        padding: 10px;
+        display: flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+        border: 1px solid $border-color;
+
+        @media screen and (min-width: 992px) {
+            display: block;
+            margin-left: 20px;
+            position: sticky;
+            top: 0;
+        }
+
+        &__wrapper {
+            order: -1;
+
+            @media screen and (min-width: 992px) {
+                flex-basis: 25%;
+                order: 1;
+            }
+        }
+
+        h2 {
+            margin-top: 0;
+
+            @media screen and (max-width: 991px) {
+                margin-bottom: 0;
+            }
+        }
+
+        h3 {
+            margin: 20px 0 10px;
+        }
+
+        &__item {
+            margin: 0 0 5px;
+            display: flex;
+
+            label {
+                flex-grow: 1;
+            }
+
+            input {
+                flex-basis: 14px;
+            }
+        }
+
+        .author-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid $border-color;
+            background: White;
+            color: Black;
+        }
+
+        &__btn {
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+            background-color: Pink;
+            padding: 10px 0;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        &__toggle {
+            font-size: 12px;
+            text-decoration: underline;
+            font-weight: normal;
+            vertical-align: middle;
+            cursor: pointer;
+
+            @media screen and (min-width: 992px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+a.no-link {
+    text-decoration: none;
+    color: Black;
+    cursor: default;
+}
+
+//mobile filters logic
+ @media screen and (max-width: 991px) {
+    .hide-filters {
+        .fanfiction-filters {
+            &__group,
+            &__btn {
+                display: none;
+            }
+        }
+
+        .on-show {
+            display: none;
+        }
+
+        .on-hide {
+            display: inline;
+        }
+    }
+
+    .on-hide {
+        display: none;
+    }
+}
+
+footer {
+    background: url(../img/line1.jpg) no-repeat center top;
+    padding: 40px 0;
+    margin: 20px 0;
+    text-align: center;
+}

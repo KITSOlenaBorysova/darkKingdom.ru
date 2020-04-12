@@ -1,0 +1,204 @@
+body {
+  background: Black;
+  color: White;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5; }
+
+h1 {
+  font-size: 28px;
+  background: url(../img/line1.jpg) no-repeat center bottom;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center; }
+
+h2 {
+  font-size: 21px; }
+
+a {
+  color: White; }
+  a:hover {
+    text-decoration: underline;
+    color: #CEB7DD; }
+
+.description {
+  text-align: center; }
+  .description span {
+    color: #CEB7DD;
+    font-weight: bold; }
+
+.additional-links strong, .additional-links a {
+  display: block; }
+
+main {
+  padding: 5px; }
+  @media screen and (min-width: 768px) {
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto; } }
+
+.main__container {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px; }
+  @media screen and (min-width: 992px) {
+    .main__container {
+      flex-flow: row;
+      justify-content: space-between; } }
+
+.fanfiction-per-page {
+  margin-top: 20px; }
+  .fanfiction-per-page__select {
+    border: 1px solid #808080;
+    font-size: 16px;
+    padding: 5px; }
+
+@media screen and (min-width: 992px) {
+  .fanfiction-list__wrapper {
+    flex-basis: 75%; } }
+
+.fanfiction-item {
+  background: #C0C0C0;
+  color: Black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  border: 1px solid #808080;
+  padding: 10px;
+  margin-bottom: 20px; }
+  .fanfiction-item.award {
+    position: relative;
+    margin-top: 40px;
+    border-color: #CEB7DD; }
+    .fanfiction-item.award:before {
+      content: "";
+      width: 26px;
+      height: 22px;
+      background: url(../img/diamond.gif) no-repeat 0 0;
+      position: absolute;
+      top: -27px;
+      left: 0; }
+    .fanfiction-item.award--rainbow:before {
+      background-image: url(../img/rainbow.gif); }
+  .fanfiction-item a {
+    color: Black; }
+    .fanfiction-item a:hover {
+      color: #808080; }
+  .fanfiction-item__title a {
+    font-size: 20px;
+    color: #000; }
+    .fanfiction-item__title a.award:before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      border: 1px solid Black;
+      background: Red; }
+  .fanfiction-item__title, .fanfiction-item__author {
+    margin: 0 0 10px;
+    font-weight: bold; }
+  .fanfiction-item__author a {
+    color: #505050; }
+  .fanfiction-item__parts {
+    display: inline-block;
+    font-weight: normal; }
+    .fanfiction-item__parts a {
+      font-weight: normal;
+      color: Black;
+      font-size: 18px;
+      padding: 0 3px 0 7px; }
+
+.fanfiction-pagination {
+  margin: 0 auto;
+  text-align: center; }
+  .fanfiction-pagination a {
+    display: inline-block;
+    padding: 5px 10px; }
+    .fanfiction-pagination a.current {
+      text-decoration: none;
+      cursor: default;
+      color: #CEB7DD;
+      font-weight: bold;
+      font-size: 20px; }
+
+.fanfiction-filters {
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  border: 1px solid #808080; }
+  @media screen and (min-width: 992px) {
+    .fanfiction-filters {
+      display: block;
+      margin-left: 20px;
+      position: sticky;
+      top: 0; } }
+  .fanfiction-filters__wrapper {
+    order: -1; }
+    @media screen and (min-width: 992px) {
+      .fanfiction-filters__wrapper {
+        flex-basis: 25%;
+        order: 1; } }
+  .fanfiction-filters h2 {
+    margin-top: 0; }
+    @media screen and (max-width: 991px) {
+      .fanfiction-filters h2 {
+        margin-bottom: 0; } }
+  .fanfiction-filters h3 {
+    margin: 20px 0 10px; }
+  .fanfiction-filters__item {
+    margin: 0 0 5px;
+    display: flex; }
+    .fanfiction-filters__item label {
+      flex-grow: 1; }
+    .fanfiction-filters__item input {
+      flex-basis: 14px; }
+  .fanfiction-filters .author-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #808080;
+    background: White;
+    color: Black; }
+  .fanfiction-filters__btn {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: Pink;
+    padding: 10px 0;
+    margin: 10px 0;
+    cursor: pointer; }
+  .fanfiction-filters__toggle {
+    font-size: 12px;
+    text-decoration: underline;
+    font-weight: normal;
+    vertical-align: middle;
+    cursor: pointer; }
+    @media screen and (min-width: 992px) {
+      .fanfiction-filters__toggle {
+        display: none; } }
+
+.hide {
+  display: none; }
+
+a.no-link {
+  text-decoration: none;
+  color: Black;
+  cursor: default; }
+
+@media screen and (max-width: 991px) {
+  .hide-filters .fanfiction-filters__group, .hide-filters .fanfiction-filters__btn {
+    display: none; }
+  .hide-filters .on-show {
+    display: none; }
+  .hide-filters .on-hide {
+    display: inline; }
+  .on-hide {
+    display: none; } }
+
+footer {
+  background: url(../img/line1.jpg) no-repeat center top;
+  padding: 40px 0;
+  margin: 20px 0;
+  text-align: center; }

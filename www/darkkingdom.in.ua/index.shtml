@@ -1,0 +1,180 @@
+<html>
+<head>
+   <title>Хостинг PeterHost.Ru >> Сайт клиента хостинга PeterHost.Ru</title>
+   <link rel="stylesheet" href="http://www.peterhost.ru/style.css" type="text/css">
+   <META NAME="keywords" CONTENT="хостинг, хостинг, shell, ftp, домен, бесплатно, crontab, mysql, неограничено, cgi, perl, web hosting,webhosting,domain,free domain,php hosting,perl,freebsd,web site,web development,web host,hoster,hosting,domains,cgi,unix hosting,fast webhosting, fast web hosting, free web hosting, free webhosting">
+   <META NAME="description" CONTENT="PeterHost.Ru - профессиональный коммерческий хостинг. Самый продвинутый из коммерческих хостингов: SSI, cgi, perl, shell, SSH, crontab, MySql, Ftp, бесплатные домены второго уровня, вежливая и расторопная служба поддержки клиентов хостинга.">
+   <meta http-equiv=Refresh content="40; URL=http://www.peterhost.ru/">
+    
+    
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#336699" vlink="#336699" alink="#336699">
+<div align="center">
+<table width="760" border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td><a href="http://www.peterhost.ru/index.shtml"><img src="http://www.peterhost.ru/imgs/head1.gif" width="429" height="48" border="0" alt="Платный хостинг и размещение сайтов"></a></td>
+  <td><img src="http://www.peterhost.ru/imgs/pixel.gif" width="91" height="1" border="0" alt=""></td>
+  <td><a href="http://www.peterhost.ru/index.shtml"><img src="http://www.peterhost.ru/imgs/yctw.gif" width="230" height="48" border="0" alt="Хостинг и регистрация доменов"></a></td>
+</tr>
+</table>
+
+<table width="750" bgcolor="#000000" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+  <table width="750" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+  <td bgcolor="#FFFFFF">
+    <table width="750" border="0" cellpadding="0" cellspacing="1">
+    <tr>
+    <td>&nbsp;Состояние аккаунта: активирован</td>
+    <td align="right">Дата активации: Пятница, Июль 12, 2002&nbsp;</td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+  </table>
+</td>
+</tr>
+</table>
+
+<br>
+<table width="750" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+
+<table width="120" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000"><tr><td>
+<table width="120" border="0" cellpadding="2" cellspacing="1">
+<tr><td bgcolor="#336699"><b style="color: White">&nbsp;.: Хостинг</b></td></tr>
+<tr><td bgcolor="#FFFFFF">
+&nbsp; - <a href="http://www.peterhost.ru/news.shtml">Новости</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/plans.shtml">Тарифы</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/instr2_1.shtml">Как оплатить</a><br>
+&nbsp; - <a href="http://inside.peterhost.ru/cgi-bin/reg.cgi">Регистрация</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/co-location_plans.shtml">Co-location</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/webdesign.shtml">Веб-дизайн</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/feedback.shtml">Контакты</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/instr.shtml">Инструкции</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/partner.shtml">Партнерство</a><br>
+&nbsp; - <a target="_blank" href="http://www.ket.ru/">Раскрутка сайта</a><br>
+&nbsp; - <a href="http://www.peterhost.ru/forums/">Форум</a><br>
+</td></tr></table></td></tr></table>
+
+
+<br><table width="120" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000"><tr><td>
+<table width="120" border="0" cellpadding="2" cellspacing="1">
+<tr><td bgcolor="#336699"><b style="color: White">&nbsp;.: Управление</b></td></tr>
+<tr><form action="http://inside.peterhost.ru/cgi-bin/enter.cgi" method="post"><td bgcolor="#FFFFFF" align="left">
+Имя пользователя:<br>
+<input type=text name="nu" class="main" size=5 style="width: 114px;"><br>
+Пароль:<br>
+<input type=password name="wp" class="main" size=3 style="width: 72px;"><input type=submit class="main" value="Войти" style="width: 40px;">
+</td></tr></table></td></tr><input type=hidden name="action" value="menu"></form></table>
+
+
+</td> <!-- закрыли левую колонку -->
+
+<td width=5><img src="http://www.peterhost.ru/imgs/pixel.gif" width=5 height=1></td>
+
+<td valign="top">
+
+<table width="500" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000"><tr><td>
+<table width="500" border="0" cellpadding="2" cellspacing="1">
+<tr><td bgcolor="#336699"><b style="color: White">&nbsp;.: Сайт клиента хостинга PeterHost.Ru</b></td></tr>
+<tr><td bgcolor="#FFFFFF" valign="top" align="center">
+<table width="480" border="0" cellpadding="0" cellspacing="0"><tr><td>
+<p>
+<b style="FONT-SIZE: 12pt">Уважаемый пользователь компании <a href="http://www.peterhost.ru">PeterHost.Ru</a>!</b><br>
+<p align="justify">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ваш аккаунт активирован. Ваш домен зарегистрирован. Вам необходимо закачать свой сайт на наш сервер. Закачка производится по протоколу FTP. Инструкции по настройке программного обеспечения, а также все необходимые данные были высланы Вам на e-mail адрес, указанный при регистрации.
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При возникновении любых вопросов, связанных с функционированием Вашего сайта, обращайтесь по e-mail <a href="mailto:support@peterhost.ru">support@peterhost.ru</a> или по телефону (812) 320-9864
+<br><br>
+Надеемся на долгое и плодотворное сотрудничество.<br>
+Служба технической поддержки PeterHost.Ru
+</p>
+<br>
+</td></tr></table>
+</td></tr></table></td></tr></table>
+
+<br><table width="500" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000"><tr><td>
+<table width="500" border="0" cellpadding="2" cellspacing="1">
+<tr><td bgcolor="#336699"><b style="color: White">&nbsp;.: Проверить доменное имя</b></td></tr>
+<tr><form action="http://www.peterhost.ru/cgi-bin/check.pl" method="post"><td bgcolor="#FFFFFF" align="center">
+<br>
+<input type=text name=dname class="main" size="15">
+<select name=zname class="main">
+  <option value="ru">.ru</option>
+  <option value="biz">.biz</option>
+  <option value="info">.info</option>
+  <option value="com">.com</option>
+  <option value="net">.net</option>
+  <option value="org">.org</option>
+  <option value="by">.by</option>
+  <option value="com.ru">.com.ru</option>
+  <option value="net.ru">.net.ru</option>
+  <option value="org.ru">.org.ru</option>
+  <option value="pp.ru">.pp.ru</option>
+  <option value="spb.ru">.spb.ru</option>
+  <option value="msk.ru">.msk.ru</option>
+  <option value="all">везде</option>
+</select>
+<input type=image src="http://www.peterhost.ru/imgs/strel.gif" border=0>
+<br><br>
+</td></tr></table></td></tr></form></table>
+
+
+ 
+
+</td> <!-- закрыли среднюю колонку -->
+
+<td width=5><img src="http://www.peterhost.ru/imgs/pixel.gif" width=5 height=1></td>
+
+<td width=120 valign="top" align="right">
+
+<table width="120" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000"><tr><td>
+<table width="120" border="0" cellpadding="2" cellspacing="1">
+<tr><td bgcolor="#336699"><b style="color: White">&nbsp;.: Новости</b></td></tr>
+<tr><td bgcolor="#FFFFFF" align="left">
+<b>13.06.02</b> - в три раза увеличено количество почтовых ящиков <nobr>[<a href="/news.shtml#20020613">подробнее</a>]</nobr><br>
+<b>24.05.02</b> - снижены цены на аренду серверов при заказе услуги "Co-location"<nobr>[<a href="/news.shtml#20020524">подробнее</a>]</nobr><br>
+<b>13.05.02</b> - сегодня наш офис работает до 23:30 <nobr>[<a href="http://www.peterhost.ru/news.shtml#20020513">подробнее</a>]</nobr><br>
+<b>03.05.02</b> - специальное предложение - майская скидка в 66% <nobr>[<a href="http://www.peterhost.ru/news.shtml#20020503">подробнее</a>]</nobr><br>
+</td></tr></table></td></tr></table>
+
+
+</td> <!-- закрыли правую колонку -->
+
+</tr>
+</table> <!-- конец средней части -->
+
+<br>
+<table width="750" bgcolor="#000000" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="750" border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td bgcolor="#FFFFFF">
+<table width="750" border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td>
+&nbsp;Copyright &copy; 2001
+</td>
+<td align="right">
+<a href="http://www.peterhost.ru/index.shtml"><font color="#000000">http://www.peterhost.ru</font></a>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+ 
+<layer name="rambler" z-index="2" left="0" top="0" visibility="hide"><img style="filter:alpha(opacity=0)" src="http://counter.rambler.ru/top100.cnt?309948" alt="" width=1 height=1 border=0></layer>
+<layer name="one" z-index="3" left="0" top="0" visibility="hide"><img style="filter:alpha(opacity=0)" src="http://cnt.one.ru/cgi-bin/cnt.cgi?id=75469&t=1" alt="" width=1 height=1 border=0></layer>
+<layer name="toplist" z-index="5" left="0" top="0" visibility="hide"><img style='filter:alpha(opacity=0)' src="http://top.list.ru/counter?js=na;id=220124" height=1 width=1 alt="" border=0></layer>
+
+</body>
+</html>

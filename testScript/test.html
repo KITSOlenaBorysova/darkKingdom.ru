@@ -1,0 +1,125 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Фанфики по Темному Королевству (аниме Сейлор Мун). Джедайт, Кунсайт, Зойсайт, Нефрит, королева Берилл, Металлия, Бандана, юмы, Нару, сейлор сенши, яой, гет, джен">
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <link rel="shortcut icon" href="favicon2.ico" type="image/x-icon">
+    <title>Фанфики Темного Королевства</title>
+    <link rel="stylesheet" media="all" href="css/main.css" />
+    <script src="js/jquery-3.4.1.min.js"></script> 
+    <script src="js/transparency.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <main>
+        <h1>
+            <img src="img/star[1]1.gif">
+            <img src="img/ff.jpg" alt="Наши фанфики" title="Наши фанфики">
+            <img src="img/star[1]1.gif">
+        </h1>
+        <p class="description">В нашей коллекции 
+            <span class="author-qty"></span>
+            и  
+            <span class="fanfic-qty"></span>. 
+        </p>
+        <p class="additional-links">
+            <strong>А также:</strong>
+            <a href="http://darkkingdom.ru/fanfics.htm">- страница фестов и альманахов <em>(пока ещё не готова :) )</em></a>
+            <a href="http://darkkingdom.ru/fanfics.htm">- старая страница фанфиков</a>
+        </p>
+        <div class="fanfiction-per-page">
+            <strong>Показывать по: </strong>
+            <select class="fanfiction-per-page__select" autocomplete="off">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+            </select>
+            фиков на страницу
+        </div>
+
+
+        <div class="main__container">
+            <div class="fanfiction-list__wrapper">
+                <div class="fanfiction-list" data-bind="fanfics">
+                    <section class="fanfiction-item" data-bind="isAward">
+                        <h3 class="fanfiction-item__title">
+                            <a data-bind="title">Title</a>
+    
+                            <div class="fanfiction-item__parts" data-bind="parts">
+                                <a data-bind="partsTitle"></a>
+                            </div>
+    
+                        </h3>
+                        <h4 class="fanfiction-item__author">
+                            <a data-bind="author">Автор</a>
+                        </h4>
+                        <div class="fanfiction-item__summary" data-bind="summary">Summary</div>
+                    </section>
+                </div>
+                <div class="fanfiction-pagination">
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                </div>
+            </div>
+
+            <div class="fanfiction-filters__wrapper">
+                <div class="fanfiction-filters hide-filters">
+                    <h2>Фильтры
+                        <span class="fanfiction-filters__toggle">
+                            <span class="on-hide">[развернуть]</span>
+                            <span class="on-show">[свернуть]</span>
+                        </span>
+                    </h2>
+                    <section class="fanfiction-filters__group">
+                        <h3>Награды</h3> 
+
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="award-ignore" name="award" value="" autocomplete="off" checked>
+                            <label for="award-ignore">Все фики</label>
+                        </div>    
+
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="award-old" name="award" value="award-old" autocomplete="off">
+                            <label for="award-old">Бриллиант</label>
+                        </div>    
+
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="award-new" name="award" value="award-new" autocomplete="off">
+                            <label for="award-new">Радужный бриллиант</label>
+                        </div>    
+
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="award-all" name="award" value="award-all" autocomplete="off">
+                            <label for="award-all">Все награды</label>
+                        </div>    
+
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="award-none" name="award" value="award-none" autocomplete="off">
+                            <label for="award-none">Без наград</label>
+                        </div>    
+                    </section>
+                    <section class="fanfiction-filters__group">
+                        <h3>Все фанфики автора</h3> 
+                        <div class="author-list">
+                            <div class="fanfiction-filters__item">
+                                <input type="checkbox" id="author1" name="author1" value="Aigsil" data-bind="input" autocomplete="off">
+                                <label for="author1" data-bind="author">Aigsil</label>
+                            </div>    
+                        </div>
+                    </section>
+
+
+                    <button class="fanfiction-filters__btn">Применить</button>
+                </div>
+            </div>    
+        </div>
+    </main>
+    <footer>
+        <a href="http://darkkingdom.ru/">На главную</a>
+    </footer>
+</body>
+</html> 
