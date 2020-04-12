@@ -8,9 +8,9 @@ let catalog = {authors: []},
     fanficsQty = 0,
     linksFromOldFanficPage;
 
-const targetPath = '/Users/guest/Documents/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics/',
+const targetPath = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics/',
       webPath = 'http://DarkKingdom.ru/fanfics/',
-      oldFanficPage = '/Users/guest/Documents/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics.htm',
+      oldFanficPage = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics.htm',
       filesToIgnore = ['shablonmain.htm', 'eralashmain.htm','ginger_soul&ershel&netmain.htm'],
       regexpCollection = {
         file: /(main\.htm)l*$/,
