@@ -11,6 +11,7 @@ let authors = [],
     currentFilters,
     ficsPerPage = 20;
 
+
 $(document).ready(function() {
     init();
     bind();
@@ -39,7 +40,8 @@ function init() {
 
 function bind() {
     $('.fanfiction-per-page__select').change(updateFicsPerPage);
-    $('.fanfiction-filters__btn').click(filterFanficList);
+    $('.apply-filters-btn').click(filterFanficList);
+    $('.reset-filters-btn').click(resetFanficList);
     $('.fanfiction-filters__toggle').click(function(){
         $('.fanfiction-filters').toggleClass('hide-filters');
     });
@@ -175,27 +177,38 @@ function renderPagination(amountOfWorks) {
 function filterFanficList() {
     let checkedItems = $('.fanfiction-filters input:checked'),
         result = [];
-    
-    if (checkedItems.length == 0) result = fanfics;
-    else {
-        setCurrentFilters(checkedItems);
+     
+    setCurrentFilters(checkedItems);
 
+    if (currentFilters.award.length || currentFilters.author.length) {
         result = fanfics.filter(function(item){
             let isAward,
                 isAuthor;
             
             isAward = (currentFilters.award.length === 0) || currentFilters.award.includes(item.award);
-
+    
             isAuthor = (currentFilters.author.length === 0) || currentFilters.author.includes(item.author) || checkCoAuthors(item.coAuthors);
-
+    
             return isAuthor && isAward;    
         });
+        updateSearchResultQty(result.length);
+    } else {
+        result = fanfics; 
+        $('.fanfiction-search-result').hide();
     }
 
     currentFilters.result = result;
-    renderFanfics(result.slice(0,ficsPerPage));
+
+    renderFanfics(result.slice(0, ficsPerPage));
     renderPagination(result.length);
 }
+
+function resetFanficList() {
+    $('#award-ignore').prop('checked', true);
+    $('.author-list input').prop('checked', false);
+    $('.apply-filters-btn').trigger('click');
+}
+
 
 function setCurrentFilters(checkedItems) {
     currentFilters = {
@@ -253,6 +266,14 @@ function goToPage(event) {
 }
 
 /* Minor function */
+function updateSearchResultQty(length) {
+    const qtyDiv = $('.fanfiction-search-result');
+    const wordEnding = getWordEnding(length);
+    const newContent = (wordEnding ? 'Найдено' : 'Найден') + ' <strong>' + length + '</strong> фик' + wordEnding; 
+
+    qtyDiv.html(newContent).css({'display' : 'inline-block'});
+}
+
 function updateQty(numA, numF) {
     const endingA = getWordEnding(numA),
           endingF = getWordEnding(numF);  

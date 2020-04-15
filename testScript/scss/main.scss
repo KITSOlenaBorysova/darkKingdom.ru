@@ -14,6 +14,26 @@ $link-white-hover: #CEB7DD;
 $text-size-fic: 18px;
 $text-size-body: 14px;
 
+//breakpoint mixin
+@mixin for-small-tablet {
+    @media screen and (min-width: 640px) {
+      @content;
+    }
+}
+
+@mixin for-tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+}
+
+@mixin for-desktop {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+}
+
+
 
 body {
     background: $main-background;
@@ -44,6 +64,32 @@ a {
     }
 }
 
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;
+    margin: 10px 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    flex-basis: 49%;
+
+    @include for-desktop() {
+        width: 100%;
+    }
+}
+
+.reset-filters-btn {
+    color: White;
+    font-weight: normal;
+    border: 1px solid $secondary-color;
+}
+
+.apply-filters-btn {
+    //background: url(../img/button0.2.png) no-repeat 0 0;
+    background: $secondary-color;
+}
+
 .description {
     text-align: center;
 
@@ -62,7 +108,7 @@ a {
 main {
     padding: 5px;
 
-    @media screen and (min-width: 768px) {
+    @include for-tablet {
         padding: 20px;
         max-width: 1200px;
         margin: 0 auto;
@@ -74,16 +120,45 @@ main {
     flex-flow: column;
     margin-top: 20px;
 
-    @media screen and (min-width: 992px) {
+    @include for-desktop {
         flex-flow: row;
         justify-content: space-between;
     }
 }
 
 .fanfiction {
+    &-search-result, 
     &-per-page {
         margin-top: 20px;
 
+        @include for-small-tablet() {
+            display: inline-block;
+        }
+    }
+
+    &-search-result {
+        display: none;
+
+        strong {
+            color: $secondary-color;
+            font-size: $text-size-body + 2;
+
+        }
+
+        @include for-small-tablet() {
+            &:after {
+                content: '|';
+                display: inline-block;
+                margin: 0 14px 0 10px;
+                font-size: $text-size-body + 2;
+                font-weight: bold;
+                color: $secondary-color;
+            }
+        }
+
+    }
+
+    &-per-page {
         &__select {
             border: 1px solid $border-color;
             font-size: 16px;
@@ -93,7 +168,7 @@ main {
 
     &-list {
         &__wrapper {
-            @media screen and (min-width: 992px) {
+            @include for-desktop {
                 flex-basis: 75%;
             }    
         }
@@ -203,15 +278,23 @@ main {
     &-filters {        
         padding: 10px;
         display: flex;
-        flex-flow: column;
         flex-wrap: wrap;
+        justify-content: space-between;
         border: 1px solid $border-color;
 
         @media screen and (min-width: 992px) {
+            flex-flow: column;
             display: block;
             margin-left: 20px;
             position: sticky;
             top: 0;
+        }
+
+        h2, 
+        &__group {
+            @media screen and (max-width: 991px) {
+                flex-basis: 100%;
+            }
         }
 
         &__wrapper {
@@ -225,6 +308,7 @@ main {
 
         h2 {
             margin-top: 0;
+            color: $secondary-color;
 
             @media screen and (max-width: 991px) {
                 margin-bottom: 0;
@@ -233,6 +317,7 @@ main {
 
         h3 {
             margin: 20px 0 10px;
+            color: $secondary-color;
         }
 
         &__item {
@@ -254,17 +339,6 @@ main {
             border: 1px solid $border-color;
             background: White;
             color: Black;
-        }
-
-        &__btn {
-            width: 100%;
-            font-size: 16px;
-            font-weight: bold;
-            border: 1px solid #ccc;
-            background-color: Pink;
-            padding: 10px 0;
-            margin: 10px 0;
-            cursor: pointer;
         }
 
         &__toggle {
@@ -295,10 +369,13 @@ a.no-link {
  @media screen and (max-width: 991px) {
     .hide-filters {
         .fanfiction-filters {
-            &__group,
-            &__btn {
+            &__group {
                 display: none;
             }
+        }
+
+        .btn {
+            display: none;
         }
 
         .on-show {
