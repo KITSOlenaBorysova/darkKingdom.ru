@@ -1,0 +1,92 @@
+main {
+    padding: 5px;
+
+    @include for-tablet {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 0 0 80px;
+    }
+
+    @include for-big-desktop {
+        margin-left: 100px;
+    }
+}
+
+.main__container {
+    display: flex;
+    flex-flow: column;
+    margin-top: 20px;
+
+    @include for-desktop {
+        flex-flow: row;
+        justify-content: space-between;
+    }
+}
+
+.fanfiction {
+    &-list {
+        &__wrapper {
+            @include for-desktop {
+                flex-basis: 75%;
+            }    
+        }
+    }
+    &-filters {        
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media screen and (min-width: 992px) {
+            flex-flow: column;
+            display: block;
+            margin-left: 20px;
+            padding: 0 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        &__wrapper {
+            order: -1;
+
+            @media screen and (min-width: 992px) {
+                flex-basis: 25%;
+                order: 1;
+            }
+        }
+    }    
+}
+
+//mobile filters logic
+@media screen and (max-width: 991px) {
+    .hide-filters {
+        .fanfiction-filters {
+            &__group {
+                display: none;
+            }
+        }
+
+        .btn {
+            display: none;
+        }
+
+        .on-show {
+            display: none;
+        }
+
+        .on-hide {
+            display: inline;
+        }
+    }
+
+    .on-hide {
+        display: none;
+    }
+}
+
+footer {
+    background: url(../img/line1.jpg) no-repeat center top;
+    padding: 40px 0;
+    margin: 20px 0;
+    text-align: center;
+}

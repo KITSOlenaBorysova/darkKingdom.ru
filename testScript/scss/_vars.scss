@@ -1,0 +1,40 @@
+//css constants
+$main-background: Black;
+$secondary-background: #C0C0C0;
+$border-color: #808080;
+$secondary-color: #CEB7DD;
+
+$list-text: Black;
+$other-text: White;
+$link-secondary: #505050;
+$link-title: #000;
+$link-black-hover: #808080;
+$link-white-hover: #CEB7DD;
+
+$text-size-fic: 18px;
+$text-size-body: 14px;
+
+//breakpoint mixin
+@mixin for-small-tablet {
+    @media screen and (min-width: 640px) {
+      @content;
+    }
+}
+
+@mixin for-tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+}
+
+@mixin for-desktop {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+}
+
+@mixin for-big-desktop {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}

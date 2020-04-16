@@ -1,0 +1,130 @@
+.fanfiction {
+    &-search-result, 
+    &-per-page {
+        margin-top: 20px;
+
+        @include for-small-tablet() {
+            display: inline-block;
+        }
+    }
+
+    &-search-result {
+        display: none;
+
+        strong {
+            color: $secondary-color;
+            font-size: $text-size-body + 2;
+
+        }
+
+        @include for-small-tablet() {
+            &:after {
+                content: '|';
+                display: inline-block;
+                margin: 0 14px 0 10px;
+                font-size: $text-size-body + 2;
+                font-weight: bold;
+                color: $secondary-color;
+            }
+        }
+
+    }
+
+    &-per-page {
+        &__select {
+            border: 1px solid $border-color;
+            font-size: 16px;
+            padding: 5px;
+        }
+    }
+
+    &-item {
+        background: $secondary-background;
+        color: Black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: $text-size-fic;
+        border: 1px solid $border-color;
+        padding: 10px;
+        margin-bottom: 20px;
+
+        &.award {
+            position: relative;
+            margin-top: 40px;
+            border-color: $link-white-hover;
+
+            &:before {
+                content: "";
+                width: 26px;
+                height: 22px;
+                background: url(../img/diamond.gif) no-repeat 0 0;
+                position: absolute;
+                top: -27px;
+                left: 0;
+            }
+
+            &--rainbow {
+                &:before {
+                    background-image: url(../img/rainbow.gif);
+                }
+            }
+        }
+
+        a {
+            color: Black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &__title {
+            margin: 0;
+            line-height: 1.3;
+            a {
+                font-size: 24px;
+                font-weight: normal;
+                text-decoration: none;
+                color: $link-title;
+            }
+        }
+
+        &__author {
+            margin: 0 0 10px;
+
+            a {
+                color: $link-secondary;
+                font-weight: normal;
+            }
+        }
+
+        &__parts {
+            display: inline-block;
+            font-weight: normal;
+
+            a {
+                font-weight: normal;
+                color: Black;
+                font-size: $text-size-fic;
+                padding: 0 3px 0 7px;
+            }
+        }
+    }
+
+    &-pagination {
+        margin: 0 auto;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+
+            &.current {
+                text-decoration: none;
+                cursor: default;
+                color: $secondary-color;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
+    }
+}

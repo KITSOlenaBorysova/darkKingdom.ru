@@ -1,0 +1,55 @@
+.fanfiction-filters {        
+    h2, 
+    &__group {
+        @media screen and (max-width: 991px) {
+            flex-basis: 100%;
+        }
+    }
+
+    h2 {
+        margin-top: 0;
+        color: $secondary-color;
+
+        @media screen and (max-width: 991px) {
+            margin-bottom: 0;
+        }
+    }
+
+    h3 {
+        margin: 20px 0 10px;
+        color: $secondary-color;
+    }
+
+    &__item {
+        margin: 0 0 5px;
+        display: flex;
+
+        label {
+            flex-grow: 1;
+        }
+
+        input {
+            flex-basis: 14px;
+        }
+    }
+
+    .author-list {
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid $border-color;
+        background: White;
+        color: Black;
+    }
+
+    &__toggle {
+        font-size: 12px;
+        text-decoration: underline;
+        font-weight: normal;
+        vertical-align: middle;
+        cursor: pointer;
+
+        @media screen and (min-width: 992px) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+body {
+    background: $main-background;
+    color: White;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: $text-size-body;
+    line-height: 1.5;
+
+    @include for-tablet() {
+        background: $main-background url(../img/fon9.jpg) repeat-y 0 0;
+    }
+}
+
+h1 {
+    font-size: 28px;
+    background: url(../img/line1.jpg) no-repeat center bottom;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+a {
+    color: White;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: $link-white-hover;
+    }
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    color: White;
+    padding: 10px 0;
+    margin: 10px 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    flex-basis: 49%;
+
+    @include for-desktop() {
+        width: 100%;
+    }
+}
+
+.reset-filters-btn {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.apply-filters-btn {
+    //background: $secondary-color;
+    box-shadow: 1px 1px 15px 0px #ceb7dd;
+    margin-top: 20px;
+    transition: all 150ms ease-in;
+
+    &:hover {
+        box-shadow: 1px 1px 35px 0px #ceb7dd;
+    }
+}
+
+.top-section {
+    @include for-desktop {
+        width: 75%;
+    }
+}
+
+.description {
+    text-align: center;
+
+    span {
+        color: $secondary-color;
+        font-weight: bold;
+    }
+}
+
+.additional-links {
+    strong, a {
+        display: block;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+a.no-link {
+    text-decoration: none;
+    color: Black;
+    cursor: default;
+}
+
