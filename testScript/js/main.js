@@ -153,6 +153,7 @@ function renderFanfics(filteredData) {
     };
 
     $(".fanfiction-list").render(data, directives);
+    setAuthorIcons();
 }
 
 function renderPagination(amountOfWorks) {
@@ -294,4 +295,24 @@ function getWordEnding(num) {
             return 'а';
         default: return 'ов';   
     }
+}
+
+function setAuthorIcons() {
+    const allAuthors = $(".fanfiction-item__author a");
+    const iconPrefix = "i";
+    const authorIconsQty = 2;        
+    let previousAuthor = allAuthors[0].text;
+    let authorIconsIndex = 1;
+
+    allAuthors[0].className = iconPrefix + authorIconsIndex;
+
+    for (let i = 1; i < allAuthors.length; i++) {
+        if (allAuthors[i].text !== previousAuthor) {
+            authorIconsIndex = (authorIconsIndex + 1 <= authorIconsQty) ? authorIconsIndex + 1 : 1;
+            previousAuthor = allAuthors[i].text;
+        }   
+
+        allAuthors[i].className = iconPrefix + authorIconsIndex;        
+    }
+
 }
