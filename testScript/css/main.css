@@ -217,6 +217,18 @@ footer {
         background: url(../img/author-icons/curl.png) no-repeat 0 0; }
       .fanfiction-item__author a.i2:before {
         background-image: url(../img/author-icons/eye.png); }
+      .fanfiction-item__author a.i3:before {
+        background-image: url(../img/author-icons/tentacle.png); }
+      .fanfiction-item__author a.i4:before {
+        background-image: url(../img/author-icons/curl2.png); }
+      .fanfiction-item__author a.i5:before {
+        background-image: url(../img/author-icons/cornu1.png); }
+      .fanfiction-item__author a.i6:before {
+        background-image: url(../img/author-icons/2.png); }
+      .fanfiction-item__author a.i7:before {
+        background-image: url(../img/author-icons/curl3.png); }
+      .fanfiction-item__author a.i8:before {
+        background-image: url(../img/author-icons/cornu2.png); }
   .fanfiction-item__parts {
     display: inline-block;
     font-weight: normal; }
