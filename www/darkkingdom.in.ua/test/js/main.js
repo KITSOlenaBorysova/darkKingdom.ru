@@ -286,6 +286,8 @@ function updateQty(numA, numF) {
 function getWordEnding(num) {
     num2str = String(num); 
 
+    if (num > 10 & num < 21) return 'ов';
+    
     switch(num2str[num2str.length - 1]) {
         case '1': 
             return '';
@@ -300,9 +302,12 @@ function getWordEnding(num) {
 function setAuthorIcons() {
     const allAuthors = $(".fanfiction-item__author a");
     const iconPrefix = "i";
-    const authorIconsQty = 2;        
+    const authorIconsQty = 8;   
+    
+    if (!allAuthors.length) return false;
+
     let previousAuthor = allAuthors[0].text;
-    let authorIconsIndex = 1;
+    let authorIconsIndex = Math.floor(Math.random() * Math.floor(authorIconsQty)) + 1;
 
     allAuthors[0].className = iconPrefix + authorIconsIndex;
 
