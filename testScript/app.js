@@ -347,7 +347,13 @@ function getFanficAward(leftColumn) {
 }
 
 function cleanTextValue(value) {
-  return value.trim().replace(/\s/g, ' ').replace(/  /g, ' ').replace(/^\d+\.\s*/, '');
+  let result = value.trim().replace(/\s/g, ' ').replace(/  /g, ' ').replace(/^\d+\.\s*/, '');
+
+  if (result[0] === '"' && result[result.length - 1] === '"') {
+    result = result.substring(1, result.length - 1);
+  } 
+
+  return result; 
 }
 
 /* FILE operations */

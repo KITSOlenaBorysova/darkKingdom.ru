@@ -159,6 +159,13 @@
                 font-weight: bold;
                 font-size: 20px;
             }
+
+            &:hover {
+                text-shadow: #CEB7DD 0px 0px 10px, 
+                #CEB7DD 0px 0px 15px,
+                #CEB7DD 0px 0px 20px,
+                #CEB7DD 0px 0px 40px;
+            }
         }
     }
 }
