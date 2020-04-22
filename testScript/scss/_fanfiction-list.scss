@@ -21,7 +21,7 @@
             &:after {
                 content: '|';
                 display: inline-block;
-                margin: 0 14px 0 10px;
+                margin: 0 10px 0 14px;
                 font-size: $text-size-body + 2;
                 font-weight: bold;
                 color: $secondary-color;
@@ -45,28 +45,14 @@
         font-size: $text-size-fic;
         border: 1px solid $border-color;
         padding: 10px;
-        margin-bottom: 20px;
+        margin: 45px 0 20px;
+        position: relative;
+
+        &:first-child {
+            margin-top: 22px;
+        }
 
         &.award {
-            position: relative;
-            margin-top: 40px;
-            border-color: $link-white-hover;
-
-            &:before {
-                content: "";
-                width: 26px;
-                height: 22px;
-                background: url(../img/diamond.gif) no-repeat 0 0;
-                position: absolute;
-                top: -27px;
-                left: 0;
-            }
-
-            &--rainbow {
-                &:before {
-                    background-image: url(../img/rainbow.gif);
-                }
-            }
         }
 
         a {
@@ -80,6 +66,7 @@
         &__title {
             margin: 0;
             line-height: 1.3;
+            padding-right: 80px;
             a {
                 font-size: 24px;
                 font-weight: normal;
@@ -142,6 +129,46 @@
                 padding: 0 3px 0 7px;
             }
         }
+
+        &__additional {
+            margin-top: 10px;
+            font-size: $text-size-fic - 2;
+            font-style: italic;
+        }
+
+        &__date {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        &__main-category {
+
+            &-wrapper {
+                position: absolute;
+                top: -27px;
+                left: 0;
+                display: flex;
+                color: White;
+            }
+
+            .award &--award {
+                width: 26px;
+                height: 22px;
+                margin-right: 5px;
+                background: url(../img/diamond.gif) no-repeat 0 0;
+            }
+
+            .award--rainbow &--award{
+                background-image: url(../img/rainbow.gif);
+            }
+
+            &--heroes {
+                margin-right: 5px;
+            }
+        }
     }
 
     &-pagination {
@@ -167,5 +194,21 @@
                 #CEB7DD 0px 0px 40px;
             }
         }
+    }
+}
+
+.hero {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+
+    &--zoicite {
+        background-color: Green;
+    }
+
+    &--ami {
+        background-color: Blue;
     }
 }
