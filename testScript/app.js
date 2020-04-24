@@ -20,7 +20,7 @@ const targetPath = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/dar
         },
         fanfic: {
           link: {
-            extension: /\.html*$/,
+            extension: /\.(htm[l]*|zip)$/,
             fanart: /fanart/i
           }
         }
@@ -29,6 +29,7 @@ const targetPath = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/dar
 /* Let's begin! */
 
 init();
+//initTestMode();
 
 function init() {
   let fileContent;
@@ -50,7 +51,7 @@ function init() {
 }
 
 function initTestMode() {
-  const fileName = 'ver&tai&lenamain.htm';
+  const fileName = 'lenamain.htm';
 
   cleanAllLogs();
   getAllLinksFromOldFanficPage();
@@ -319,7 +320,7 @@ function getFanficTitle(mode, items) {
 
 function getMultipartTitle(leftColumn) {
   let title = leftColumn.textContent,
-      searchStr = ['*0*', '*1*', 'Серия 0', '1."Пушистик"', 'Пролог'],
+      searchStr = ['Часть', '*0*', '*1*', 'Серия 0', '1."Пушистик"', 'Пролог'],
       end;
   
   searchStr.some(str => {
