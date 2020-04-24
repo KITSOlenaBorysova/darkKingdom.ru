@@ -28,7 +28,8 @@ const validation = {
         message: ['Тело фика не может быть пустым', 'Тэги body, script, link запрещены', 'Уже присутствуют тэги форматирования']
     }
 };
-const forbiddenTags = ['<script', '<body', '<html', '<link'];
+//TODO закрытие
+const forbiddenTags = ['<script', '<body', '<html', '<link', '/body>'];
 const formatTags = ['<br', '<p'];
 let isMarkUpReady = false;
 

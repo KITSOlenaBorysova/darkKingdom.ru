@@ -15,6 +15,16 @@ body
   text-align: justify;} 
 
 .center{text-align:center;}  
+
+.fanfic-body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fanfic-body p {
+  text-indent: 30px;
+}
+
   
 </style>
 <title>%AUTHOR% - %TITLE%</title>
@@ -38,8 +48,9 @@ Sailormoon is the property of Naoko Takeuchi, Kodanshi Comics, and Toei Animatio
 
 <p align="center"><em><b><font face="Arial" size="6">%TITLE%</font></b></em></p>
 
-
-%TEXT%
+<div class="fanfic-body">
+  %TEXT%
+</div>
 
 <table border="0" width="350" cellspacing="0" cellpadding="0" style="margin:0 auto;">
   <tr>
