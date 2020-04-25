@@ -81,11 +81,6 @@ a, button, select {
 .hide {
   display: none; }
 
-a.no-link {
-  text-decoration: none;
-  color: Black;
-  cursor: default; }
-
 main {
   padding: 5px; }
   @media screen and (min-width: 768px) {
@@ -160,7 +155,7 @@ footer {
     .fanfiction-search-result:after {
       content: '|';
       display: inline-block;
-      margin: 0 14px 0 10px;
+      margin: 0 10px 0 14px;
       font-size: 16px;
       font-weight: bold;
       color: #CEB7DD; } }
@@ -204,6 +199,10 @@ footer {
       font-weight: normal;
       text-decoration: none;
       color: #000; }
+      .fanfiction-item__title a.no-link {
+        text-decoration: none;
+        color: Black;
+        cursor: default; }
   .fanfiction-item__author {
     margin: 0 0 10px; }
     .fanfiction-item__author a {

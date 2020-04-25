@@ -21,7 +21,7 @@
             &:after {
                 content: '|';
                 display: inline-block;
-                margin: 0 14px 0 10px;
+                margin: 0 10px 0 14px;
                 font-size: $text-size-body + 2;
                 font-weight: bold;
                 color: $secondary-color;
@@ -85,6 +85,13 @@
                 font-weight: normal;
                 text-decoration: none;
                 color: $link-title;
+
+                &.no-link {
+                    text-decoration: none;
+                    color: Black;
+                    cursor: default;
+                }
+                
             }
         }
 
