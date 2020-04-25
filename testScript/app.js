@@ -9,8 +9,8 @@ let catalog = {authors: []},
     linksFromOldFanficPage;
 
 const targetPath = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics/',
-      webPath = 'http://DarkKingdom.ru/fanfics/',
-      oldFanficPage = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics.htm',
+      webPath = 'fanfics/',
+      oldFanficPage = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics-old.htm',
       filesToIgnore = ['shablonmain.htm', 'eralashmain.htm','ginger_soul&ershel&netmain.htm'],
       regexpCollection = {
         file: /(main\.htm)l*$/,
@@ -51,7 +51,7 @@ function init() {
 }
 
 function initTestMode() {
-  const fileName = 'lenamain.htm';
+  const fileName = 'kellamain.html';
 
   cleanAllLogs();
   getAllLinksFromOldFanficPage();
@@ -103,7 +103,7 @@ function parseHtmlFile(source, fileName) {
   //all models
   if (fanfics.length === 0) updateErrorLog(fileName + ': автор без фанфиков');
   else {
-    author = getAuthorNameFromOldFanficPage(fileName) || getAuthorName(table[0]);
+    author = getAuthorNameFromOldFanficPage(fileName) || getAuthorName(tables[0]);
     coAuthors = getCoAuthorsList(dom.window.document.querySelector('#coAuthors'));
 
     catalog.authors.push({
@@ -235,7 +235,7 @@ function getAuthorName(table) {
 }
 
 function getAuthorNameFromOldFanficPage(fileName) {
-  let authorName;      
+  let authorName = false;      
   
   linksFromOldFanficPage.some(link => {
     if (link.href.indexOf('/' + fileName) !== -1) {
@@ -244,8 +244,7 @@ function getAuthorNameFromOldFanficPage(fileName) {
     }
   });      
 
-  if (!authorName) updateErrorLog(fileName);
-  return cleanTextValue(authorName);        
+  return authorName ? cleanTextValue(authorName) : false;        
 }
 
 function getCoAuthorsList(dataInput) {

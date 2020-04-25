@@ -2,7 +2,7 @@ const template = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<link rel="shortcut icon" href="../../favicon2.ico" type="image/x-icon">
 <style type="text/css">
 td {font-family: verdana, arial, helvetica; 
       font-size: 12px; color: #000000 }
@@ -18,7 +18,7 @@ body
 
 .fanfic-body {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 
 .fanfic-body p {

@@ -110,6 +110,7 @@
                     margin-right: 5px;
                     vertical-align: text-bottom;
                     background: url(../img/author-icons/curl.png) no-repeat 0 0;
+                    background-size: contain;
                 }
 
                 &.i2:before {
@@ -133,6 +134,28 @@
                 }
                 &.i8:before {
                     background-image: url(../img/author-icons/cornu2.png);
+                }
+                &.i9:before {
+                    background-image: url(../img/author-icons/4_1.png);
+                }
+
+                &.i10:before {
+                    background-image: url(../img/author-icons/4_2.png);
+                }
+                &.i11:before {
+                    background-image: url(../img/author-icons/4_3.png);
+                }
+                &.i12:before {
+                    background-image: url(../img/author-icons/4_4.png);
+                }
+                &.i13:before {
+                    background-image: url(../img/author-icons/4_5.png);
+                }
+                &.i14:before {
+                    background-image: url(../img/author-icons/4_6.png);
+                }
+                &.i15:before {
+                    background-image: url(../img/author-icons/4_7.png);
                 }
 
             }
