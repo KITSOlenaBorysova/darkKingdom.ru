@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -46,7 +46,7 @@
             </div>
             <div class="fanfiction-per-page">
                 <strong>Показывать по: </strong>
-                <select class="fanfiction-per-page__select" autocomplete="off">
+                <select class="fanfiction-per-page__select" autocomplete="off" id="size" name="size">
                     <option value="10">10</option>
                     <option value="20" selected>20</option>
                     <option value="50">50</option>
@@ -94,6 +94,18 @@
                             <span class="on-show">[свернуть]</span>
                         </span>
                     </h2>
+                    <section class="fanfiction-filters__group">
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="tags-any" name="tags" value="" autocomplete="off" checked>
+                            <label for="tags-any">Все фики</label>
+                        </div>    
+
+                        <div class="fanfiction-filters__item">
+                            <input type="radio" id="tags-update2020" name="tags" value="update2020" autocomplete="off">
+                            <label for="tags-update2020">Обновление-2020</label>
+                        </div>    
+
+                    </section>
                     <section class="fanfiction-filters__group">
                         <h3>Награды</h3> 
 

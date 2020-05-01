@@ -72,11 +72,11 @@ function getDataFromForm() {
 function convertFicBodyToHtml() {
     if (isMarkUpReady) return;
     
-    let paragraphs = data.text.split('\n\n'),
+    let paragraphs = cleanText(data.text).split('\n\n'),
         newLine;
 
     paragraphs.forEach((line,index) => {
-        newLine = line.replace(/\n/g, '\n<br>').replace(/-\s/g, '— ');
+        newLine = line.replace(/\n/g, '\n<br>');
         paragraphs[index] = '<p>' + newLine + '</p>';
     });
 
@@ -119,6 +119,10 @@ function validateData() {
     }
 
     return result;
+}
+
+function cleanText(text) {
+    return text.replace(/\s*\n\s*\n\s*/g, '\n\n').replace(/-\s/g, '— ');
 }
 
 function validateWithArray(field, testCases) {

@@ -10,6 +10,7 @@ let catalog = {authors: []},
 
 const targetPath = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics/',
       webPath = 'fanfics/',
+      testWebPath = '../fanfics/',
       oldFanficPage = '/Users/guest/Documents/DarkKingdom.ru/DarkKingdom.ru/www/darkkingdom.in.ua/fanfics-old.htm',
       filesToIgnore = ['shablonmain.htm', 'eralashmain.htm','ginger_soul&ershel&netmain.htm'],
       regexpCollection = {
@@ -127,7 +128,8 @@ function getFanficDataForComplexCases(complexFanficItems, fileName) {
       tdWithSummaryIndex = 1,
       summary,
       award,
-      id;
+      id,
+      tags;
 
   complexFanficItems.forEach(item => {
     id = item.getAttribute('id');
@@ -158,13 +160,15 @@ function getFanficDataForComplexCases(complexFanficItems, fileName) {
     title = cleanTextValue(firstTD.textContent);
     summary = cleanTextValue(tds[tdWithSummaryIndex].textContent);
     award = getFanficAward(firstTD);
+    tags = getSpecialTags(tds[tdWithSummaryIndex]);
 
     fanfic = {
       'title': title,
       'summary': summary,
       'link': webPath + fileName + id,
       'multipart': false,
-      'award': award
+      'award': award,
+      'tags': tags,
     };
 
     fanfics.push(fanfic);
@@ -206,6 +210,7 @@ function getFanficDataForBaseCases(fanficItems, fileName) {
       }
 
       fanfic.award = getFanficAward(fanficLeftColumn);
+      fanfic.tags = getSpecialTags(fanficRightColumn);
 
       fanfics.push(fanfic);
 
@@ -344,6 +349,15 @@ function getFanficAward(leftColumn) {
   });
 
   return result;
+}
+
+function getSpecialTags(tdSummary) {
+  if (!tdSummary) return '';
+
+  let tags = tdSummary.querySelector('.tags');
+
+  if (tags) return tags.value;
+  else return '';
 }
 
 function cleanTextValue(value) {

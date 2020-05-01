@@ -215,7 +215,8 @@ footer {
         height: 20px;
         margin-right: 5px;
         vertical-align: text-bottom;
-        background: url(../img/author-icons/curl.png) no-repeat 0 0; }
+        background: url(../img/author-icons/curl.png) no-repeat 0 0;
+        background-size: contain; }
       .fanfiction-item__author a.i2:before {
         background-image: url(../img/author-icons/eye.png); }
       .fanfiction-item__author a.i3:before {
@@ -230,6 +231,20 @@ footer {
         background-image: url(../img/author-icons/curl3.png); }
       .fanfiction-item__author a.i8:before {
         background-image: url(../img/author-icons/cornu2.png); }
+      .fanfiction-item__author a.i9:before {
+        background-image: url(../img/author-icons/4_1.png); }
+      .fanfiction-item__author a.i10:before {
+        background-image: url(../img/author-icons/4_2.png); }
+      .fanfiction-item__author a.i11:before {
+        background-image: url(../img/author-icons/4_3.png); }
+      .fanfiction-item__author a.i12:before {
+        background-image: url(../img/author-icons/4_4.png); }
+      .fanfiction-item__author a.i13:before {
+        background-image: url(../img/author-icons/4_5.png); }
+      .fanfiction-item__author a.i14:before {
+        background-image: url(../img/author-icons/4_6.png); }
+      .fanfiction-item__author a.i15:before {
+        background-image: url(../img/author-icons/4_7.png); }
   .fanfiction-item__parts {
     display: inline-block;
     font-weight: normal; }

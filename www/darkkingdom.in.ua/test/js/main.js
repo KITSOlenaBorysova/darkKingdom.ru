@@ -4,17 +4,20 @@ const filters = {
             'award-new': ['rainbow'],
             'award-all': ['diamond', 'rainbow'],
             'award-none': ['none']
-        }};
+}};
 
 let authors = [],
     fanfics = [],
     currentFilters,
-    ficsPerPage = 20;
+    currentPage = 1,
+    ficsPerPage = 20,
+    currentHash = {};
 
 
 $(document).ready(function() {
     init();
     bind();
+    readHashTags();
 });
 
 function init() {
@@ -39,7 +42,7 @@ function init() {
 }
 
 function bind() {
-    $('.fanfiction-per-page__select').change(updateFicsPerPage);
+    $('#size').change(updateFicsPerPage);
     $('.apply-filters-btn').click(filterFanficList);
     $('.reset-filters-btn').click(resetFanficList);
     $('.fanfiction-filters__toggle').click(function(){
@@ -53,7 +56,7 @@ function bind() {
 function renderPage() {
     updateQty(authors.length, fanfics.length);
     renderFilters();
-    renderFanfics(fanfics.slice(0,ficsPerPage));
+    //renderFanfics(fanfics.slice(0,ficsPerPage));
     renderPagination(fanfics.length);
 }
 
@@ -154,6 +157,7 @@ function renderFanfics(filteredData) {
 
     $(".fanfiction-list").render(data, directives);
     setAuthorIcons();
+
 }
 
 function renderPagination(amountOfWorks) {
@@ -177,20 +181,26 @@ function renderPagination(amountOfWorks) {
 
 function filterFanficList() {
     let checkedItems = $('.fanfiction-filters input:checked'),
-        result = [];
+        result = [],
+        isFiltersSet;
      
     setCurrentFilters(checkedItems);
 
-    if (currentFilters.award.length || currentFilters.author.length) {
+    isFiltersSet = !!(currentFilters.award.length || currentFilters.author.length  || currentFilters.tags.length);
+
+    if (isFiltersSet) {
         result = fanfics.filter(function(item){
             let isAward,
-                isAuthor;
+                isAuthor,
+                isTags;
             
             isAward = (currentFilters.award.length === 0) || currentFilters.award.includes(item.award);
     
             isAuthor = (currentFilters.author.length === 0) || currentFilters.author.includes(item.author) || checkCoAuthors(item.coAuthors);
+
+            isTags = (currentFilters.tags.length === 0) || currentFilters.tags.includes(item.tags);
     
-            return isAuthor && isAward;    
+            return isAuthor && isAward && isTags;    
         });
         updateSearchResultQty(result.length);
     } else {
@@ -206,8 +216,9 @@ function filterFanficList() {
 
 function resetFanficList() {
     $('#award-ignore').prop('checked', true);
+    $('#tags-any').prop('checked', true);
     $('.author-list input').prop('checked', false);
-    $('.apply-filters-btn').trigger('click');
+    filterFanficList();
 }
 
 
@@ -215,8 +226,16 @@ function setCurrentFilters(checkedItems) {
     currentFilters = {
         "author": [],
         "award": [],
+        "tags": [],
         "result":[]
     };
+
+    let authorsID = [];
+
+    updateHash('author');
+    updateHash('award');
+    updateHash('tags');
+    updateHash('page');
 
     for (let i = 0; i < checkedItems.length; i++) {
         let name = checkedItems[i].name,
@@ -224,9 +243,23 @@ function setCurrentFilters(checkedItems) {
 
         if (name === 'award' && value !== '') {
             currentFilters.award = filters.award[value];
+            updateHash('award', value);
         }    
-        if (name.indexOf('author') !== -1) currentFilters.author.push(value);
+
+        if (name === 'tags'  && value !== '') {
+            currentFilters.tags.push(value);
+            updateHash('tags', value);
+        }    
+
+        if (name.indexOf('author') !== -1) {
+            currentFilters.author.push(value);
+            authorsID.push(name);
+        }
     }
+    if (currentFilters.author.length) {
+        updateHash('author', authorsID);
+    }
+
 }
 
 function checkCoAuthors(coAuthors) {
@@ -251,12 +284,14 @@ function updateFicsPerPage() {
 
     if (ficsPerPage === 0) renderFanfics(source);
     else renderFanfics(source.slice(0,ficsPerPage));
+
+    updateHash('size', ficsPerPage);
 }
 
 function goToPage(event) {
-    const pageNumber = parseInt($(this).text()),
-    start = (pageNumber - 1)*ficsPerPage,
-    end = start + 20,
+    currentPage = parseInt($(this).text()),
+    start = (currentPage - 1)*ficsPerPage,
+    end = start + ficsPerPage,
     data = currentFilters ? currentFilters.result : fanfics;  
 
     event.preventDefault();
@@ -264,6 +299,8 @@ function goToPage(event) {
     $(this).addClass('current');
     renderFanfics(data.slice(start,end));
     $(window).scrollTop(0);
+
+    updateHash('page', currentPage);
 }
 
 /* Minor function */
@@ -302,7 +339,7 @@ function getWordEnding(num) {
 function setAuthorIcons() {
     const allAuthors = $(".fanfiction-item__author a");
     const iconPrefix = "i";
-    const authorIconsQty = 8;   
+    const authorIconsQty = 15;   
     
     if (!allAuthors.length) return false;
 
@@ -320,4 +357,108 @@ function setAuthorIcons() {
         allAuthors[i].className = iconPrefix + authorIconsIndex;        
     }
 
+}
+
+/* HASH functions */
+
+function readHashTags() {
+    const hashData = decodeHash();
+    applyHashValuesToFilter(hashData);
+    filterFanficList();
+    applyHashPageNumber(hashData);
+}
+
+function applyHashValuesToFilter(filters) {
+    for (let key in filters) {
+        if (key === 'award' || key === 'tags') {
+            let selector = '[name="' + key + '"][value="' + filters[key] + '"]',
+                input = $(selector);
+
+            if (input.length) {
+                input.prop('checked', true);
+            }    
+        }
+
+        if (key === 'size') {
+            let selector = 'option[value="' + filters[key] + '"]',
+                input = $(selector);
+
+            if (input.length) {
+                $('#size').val(filters['size']);
+                $('#size').trigger('change');
+            } 
+        }
+
+        if (key === 'author') {
+            let authorsList = $('.author-list input'),
+                authorsFilter = filters.author.split(',');
+
+            authorsList.prop('checked', false);
+            authorsFilter.forEach(item => {
+                let selector = '#' + item,
+                    input = $(selector);
+
+                if (input.length) {
+                    input.prop('checked', true);
+                }    
+            });
+        }
+    }
+}
+
+function decodeHash() {
+    const availableFilters = ['size','award','tags','author','page'];
+    let filters = {},
+        hash = location.hash,
+        hashValues = [];
+
+    hash = hash.replace('#','');
+    hashValues = hash.split('&');
+
+    hashValues.forEach(item => {
+        let filter = item.split('=');
+        let isFilterValid = !!(filter.length == 2 && availableFilters.includes(filter[0]) && filter[1].length);
+        
+        if (isFilterValid) {
+            filters[filter[0]] = filter[1];
+        }
+    });
+
+    return filters;
+}
+
+function updateHash(key, value) {
+    let locationHash = [];
+
+    if (value) currentHash[key] = value;
+    else delete currentHash[key];
+
+    for (let prop in currentHash) {
+        let newValue = currentHash[prop].isArray ? currentHash[prop].join(',') : currentHash[prop];
+
+        locationHash.push(prop + '=' + newValue);
+    }
+
+    location.hash = '#' + locationHash.join('&');
+}
+
+function clearHash() {
+    location.hash = '';
+    currentHash = {};
+}
+
+function applyHashPageNumber(hashData) {
+    const pageNumber = hashData.page;
+
+    if (pageNumber) {
+        let pages = $('.fanfiction-pagination a').toArray();
+        let isPageExist = pages.some(page => {
+            if ($(page).text() == pageNumber) {
+                $(page).trigger('click');
+                return true;
+            }
+        });
+
+        if (!isPageExist) updateHash('page');
+    } else updateHash('page');
 }
