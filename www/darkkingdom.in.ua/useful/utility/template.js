@@ -7,14 +7,16 @@ const template = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 td {font-family: verdana, arial, helvetica; 
       font-size: 12px; color: #000000 }
 A  {text-decoration: none}
- A:hover {color: #808080; font-family: verdana, arial, helvetica; text-decoration: underline; }
+ A:hover {color: #808080; text-decoration: underline; }
  
 body
 {  background-color:#C0C0C0; 
   color:#000000; 
   text-align: justify;} 
 
-.center{text-align:center;}  
+.center{
+  text-align:center;
+}  
 
 .fanfic-body {
   max-width: 1000px;
@@ -23,6 +25,14 @@ body
 
 .fanfic-body p {
   text-indent: 30px;
+ }
+
+.fanfic-body.no-padding p {
+  margin: 5px 0;
+ }
+
+.fanfic-body p.center {
+  text-indent: 0;
 }
 
   

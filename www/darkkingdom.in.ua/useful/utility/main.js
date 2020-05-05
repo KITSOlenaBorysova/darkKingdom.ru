@@ -72,15 +72,13 @@ function getDataFromForm() {
 function convertFicBodyToHtml() {
     if (isMarkUpReady) return;
     
-    let paragraphs = cleanText(data.text).split('\n\n'),
-        newLine;
+    let paragraphs = prepareText(data.text).split('\n');
 
     paragraphs.forEach((line,index) => {
-        newLine = line.replace(/\n/g, '\n<br>');
-        paragraphs[index] = '<p>' + newLine + '</p>';
+        if (line) paragraphs[index] = '<p>' + line + '</p>';
     });
 
-    data.text = paragraphs.join('\n\n');
+    data.text = paragraphs.join('\n');
 }
 
 function validateData() {
@@ -121,8 +119,22 @@ function validateData() {
     return result;
 }
 
-function cleanText(text) {
-    return text.replace(/\s*\n\s*\n\s*/g, '\n\n').replace(/-\s/g, '— ');
+function prepareText(text) {
+    //let result = text.replace(/\s*\n\s*\n\s*/g, '\n\n').replace(/\n{2,}/g, '<br><br>\n').replace(/-\s/g, '— ').replace(/\n\s*-/g, '\n— ');
+    //const regexp = [];
+
+    let result = text;
+
+    //remove whitespaces around \n
+    result = result.replace(/ *\n */g, '\n');
+    
+    //find double \n and add br
+    result = result.replace(/\n{2,}/g, '<br><br>\n');
+    
+    //long deffice
+    result = result.replace(/ *- /g, ' — ').replace(/\n-/g, '\n— ');
+
+    return result;
 }
 
 function validateWithArray(field, testCases) {
