@@ -120,21 +120,10 @@ function validateData() {
 }
 
 function prepareText(text) {
-    //let result = text.replace(/\s*\n\s*\n\s*/g, '\n\n').replace(/\n{2,}/g, '<br><br>\n').replace(/-\s/g, '— ').replace(/\n\s*-/g, '\n— ');
-    //const regexp = [];
-
-    let result = text;
-
-    //remove whitespaces around \n
-    result = result.replace(/ *\n */g, '\n');
-    
-    //find multiple \n and replace for 2 br
-    result = result.replace(/\n{2,}/g, '<br><br>\n');
-    
-    //long dash
-    result = result.replace(/ *- /g, ' — ').replace(/\n-/g, '\n— ');
-
-    return result;
+    return text
+            .replace(/ *\n */g, '\n')   // remove whitespaces around \n
+            .replace(/\n{2,}/g, '<br><br>\n')   //find multiple \n and replace for 2 br
+            .replace(/ *- /g, ' — ').replace(/\n-/g, '\n— '); //long dash
 }
 
 function validateWithArray(field, testCases) {

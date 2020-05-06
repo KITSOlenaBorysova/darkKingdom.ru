@@ -324,7 +324,7 @@ function getFanficTitle(mode, items) {
 
 function getMultipartTitle(leftColumn) {
   let title = leftColumn.textContent,
-      searchStr = ['Часть', '*0*', '*1*', 'Серия 0', '1."Пушистик"', 'Пролог'],
+      searchStr = ['Пролог', 'Часть', '*0*', '*1*', 'Серия 0', '1."Пушистик"'],
       end;
   
   searchStr.some(str => {
