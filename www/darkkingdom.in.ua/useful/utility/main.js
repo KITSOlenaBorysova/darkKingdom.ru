@@ -128,10 +128,10 @@ function prepareText(text) {
     //remove whitespaces around \n
     result = result.replace(/ *\n */g, '\n');
     
-    //find double \n and add br
+    //find multiple \n and replace for 2 br
     result = result.replace(/\n{2,}/g, '<br><br>\n');
     
-    //long deffice
+    //long dash
     result = result.replace(/ *- /g, ' — ').replace(/\n-/g, '\n— ');
 
     return result;
