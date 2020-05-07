@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 function init() {
     let sortedAuthors = catalog.authors.sort(function(a,b) {
-        if (a.author < b.author) return -1;
+        if (a.author.toLowerCase() < b.author.toLowerCase()) return -1;
         return 1;
     });
 
